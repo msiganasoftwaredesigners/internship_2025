@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="text-white">
+
+    <!-- Section Start -->
+    <section class="py-10 bg-[#55575a]">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Heading -->
+        <h2 class="heading opacity-0 translate-y-8 text-3xl font-bold md:text-4xl leading-none">
+          Everything your <br />business needs<br class="hidden md:block" />
+          to sell online
+        </h2>
+        <!-- Subtext -->
+        <p class="subtext opacity-0 translate-y-8 text-md font-bold font-sans leading-none tracking-tight text-gray-200 max-w-2xl mx-auto mb-16">
+          Whether you’re selling products, your expertise, or your time, <br />
+          your website is designed for simple customer check-out or <br />
+          appointment booking.
+        </p>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7 text-left">
+          <!-- Product Card -->
+          <div class="card opacity-0 translate-y-8">
+            <div
+              class="bg-[#E5E5E3] justify-center flex items-center mb-4 px-7 h-[210px]"
+            >
+              <img
+                decoding="async"
+                src="https://media-www.sqspcdn.com/images/pages/tour/store-management/order-management/order-details-500w.jpg"
+                width="1281"
+                height="854"
+                loading="lazy"
+                alt="Commerce orders UI on Squarespace app"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-gray-200">Sell Products</h3>
+            <p class="text-sm font-semibold text-gray-200 mb-4">
+              Allow visitors to browse your merchandise, add items to their cart,
+              and check out simply and efficiently.
+            </p>
+            <a
+              href="#"
+              class="text-sm font-semibold underline text-gray-200"
+              >LEARN MORE</a
+            >
+          </div>
+
+          <!-- Services Card -->
+          <div class="card opacity-0 translate-y-8">
+            <div
+              class="bg-[#E5E5E5] justify-center flex items-center mb-4 px-7 h-[210px]"
+            >
+              <img
+                decoding="async"
+                src="https://media-www.sqspcdn.com/images/pages/tour/email-campaigns/advanced-tools/automation-300w.jpg"
+                width="672"
+                height="432"
+                loading="lazy"
+                alt="Example of Squarespace Inventory panel"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-gray-200">Sell Services</h3>
+            <p class="text-sm font-semibold mb-4 text-gray-200">
+              Collect customer emails and build mailing lists.
+            </p>
+            <a
+              href="#"
+              class="text-sm font-semibold underline text-gray-200"
+              >LEARN MORE</a
+            >
+          </div>
+
+          <!-- In Person Card -->
+          <div class="card opacity-0 translate-y-8">
+            <div
+              class="bg-[#E5E5E5] justify-center flex items-center mb-4 px-7 h-[210px]"
+            >
+              <img
+                decoding="async"
+                src="https://media-www.sqspcdn.com/images/pages/tour/overview-ecommerce/sell-in-person-ui-300w.jpg"
+                width="672"
+                height="432"
+                loading="lazy"
+                alt="Example of Squarespace Inventory panel"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-gray-200">Sell in person</h3>
+            <p class="text-sm font-semibold mb-4 text-gray-200">
+              Keep your inventory and customer data in sync, whether you sell
+              online or in person.
+            </p>
+            <a
+              href="#"
+              class="text-sm font-semibold underline text-gray-200"
+              >LEARN MORE</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section End -->
+
+    <script>
+      const heading = document.querySelector(".heading");
+      const subtext = document.querySelector(".subtext");
+      const cards = document.querySelectorAll(".card");
+
+      const options = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === heading) {
+              entry.target.classList.remove("opacity-0", "translate-y-8");
+              entry.target.classList.add(
+                "opacity-100",
+                "translate-y-0",
+                "transition-all",
+                "duration-[1000ms]",
+                "ease-out"
+              );
+            }
+            if (entry.target === subtext) {
+              setTimeout(() => {
+                entry.target.classList.remove("opacity-0", "translate-y-8");
+                entry.target.classList.add(
+                  "opacity-100",
+                  "translate-y-0",
+                  "transition-all",
+                  "duration-[1000ms]",
+                  "ease-out"
+                );
+              }, 300);
+            }
+            if (entry.target.classList.contains("card")) {
+              const index = Array.from(cards).indexOf(entry.target);
+              setTimeout(() => {
+                entry.target.classList.remove("opacity-0", "translate-y-8");
+                entry.target.classList.add(
+                  "opacity-100",
+                  "translate-y-0",
+                  "transition-all",
+                  "duration-[1000ms]",
+                  "ease-out"
+                );
+              }, 600 + index * 400);
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      // Observe all
+      observer.observe(heading);
+      observer.observe(subtext);
+      cards.forEach((card) => observer.observe(card));
+    </script>
+  </body><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Online Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Section Start -->
+  <section class="py-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <!-- Heading -->
+      <h2 class="text-3xl font-bold md:text-4xl leading-tight mb-6 fade-in">
+        Everything your business needs to sell online
+      </h2>
+      <!-- Subtext -->
+      <p class="text-md font-semibold text-gray-300 mb-16 fade-in">
+        Whether you’re selling products, services, or your time, your website is designed for simple customer check-out or appointment booking.
+      </p>
+
+      <!-- Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <!-- Product Card -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg fade-in">
+          <img src="https://via.placeholder.com/300" alt="Sell Products" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-lg font-bold text-gray-200">Sell Products</h3>
+          <p class="text-sm text-gray-300 mb-4">
+            Allow visitors to browse your merchandise, add items to their cart, and check out simply and efficiently.
+          </p>
+          <a href="#" class="text-sm font-semibold text-blue-400 hover:underline">LEARN MORE</a>
+        </div>
+
+        <!-- Services Card -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg fade-in">
+          <img src="https://via.placeholder.com/300" alt="Sell Services" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-lg font-bold text-gray-200">Sell Services</h3>
+          <p class="text-sm text-gray-300 mb-4">
+            Collect customer emails and build mailing lists.
+          </p>
+          <a href="#" class="text-sm font-semibold text-blue-400 hover:underline">LEARN MORE</a>
+        </div>
+
+        <!-- In Person Card -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg fade-in">
+          <img src="https://via.placeholder.com/300" alt="Sell in Person" class="w-full h-48 object-cover rounded-md mb-4">
+          <h3 class="text-lg font-bold text-gray-200">Sell in Person</h3>
+          <p class="text-sm text-gray-300 mb-4">
+            Keep your inventory and customer data in sync, whether you sell online or in person.
+          </p>
+          <a href="#" class="text-sm font-semibold text-blue-400 hover:underline">LEARN MORE</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section End -->
+
+  <script>
+    // Intersection Observer for fade-in effect
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observerOptions = {
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+    fadeElements.forEach(element => observer.observe(element));
+  </script>
+
+</body>
+</html>
+
+</html>

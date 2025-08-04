@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>eden</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -15,31 +15,31 @@
 
     <!-- Section Start -->
     <section class="py-10 bg-[#55575a]">
-      <div class="max-w-4xl mx-auto text-center">
+      <!-- Container: no horizontal padding under md, padding-x on lg and up -->
+      <div class="max-w-4xl mx-auto px-0 md:px-0 lg:px-5 md:text-center">
         <!-- Heading -->
-        <h2 class="heading opacity-0 translate-y-8 text-3xl font-bold mb-4 md:text-4xl leading-none">
-          Everything your <br />business needs<br class="hidden md:block" />
-          to sell online
-        </h2>
-        <!-- Subtext -->
-        <p class="subtext opacity-0 translate-y-8 text-md font-bold font-sans leading-none tracking-tight text-gray-200 max-w-2xl mx-auto mb-16">
-          Whether you’re selling products, your expertise, or your time, <br />
-          your website is designed for simple customer check-out or <br />
-          appointment booking.
-        </p>
+        <div>
+          <h2 class="heading opacity-0 translate-y-8 text-3xl font-bold mb-4 md:text-4xl leading-none">
+            Everything your <br />business needs<br />
+            to sell online
+          </h2>
+          <!-- Subtext -->
+          <p class="subtext opacity-0 translate-y-8 text-md font-bold font-sans leading-none tracking-tight text-gray-200 max-w-2xl mx-auto mb-16">
+            Whether you’re selling products, your expertise, or your time, <br />
+            your website is designed for simple customer check-out or <br />
+            appointment booking.
+          </p>
+        </div>
 
         <!-- Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-7 text-left">
           <!-- Product Card -->
-          <div class="card opacity-0 translate-y-8">
-            <div
-              class="bg-[#E5E5E3] justify-center flex items-center mb-4 px-7 h-[210px]"
-            >
+          <div class="card opacity-0 translate-y-8 px-0 md:px-7">
+            <div class="bg-[#E5E5E3] flex justify-center items-center mb-4 h-[210px] w-full">
               <img
                 decoding="async"
                 src="https://media-www.sqspcdn.com/images/pages/tour/store-management/order-management/order-details-500w.jpg"
-                width="1281"
-                height="854"
+                class="w-full h-full object-contain"
                 loading="lazy"
                 alt="Commerce orders UI on Squarespace app"
               />
@@ -49,23 +49,16 @@
               Allow visitors to browse your merchandise, add items to their cart,
               and check out simply and efficiently.
             </p>
-            <a
-              href="#"
-              class="text-sm font-semibold underline text-gray-200"
-              >LEARN MORE</a
-            >
+            <a href="#" class="text-sm font-semibold underline text-gray-200">LEARN MORE</a>
           </div>
 
           <!-- Services Card -->
-          <div class="card opacity-0 translate-y-8">
-            <div
-              class="bg-[#E5E5E5] justify-center flex items-center mb-4 px-7 h-[210px]"
-            >
+          <div class="card opacity-0 translate-y-8 px-0 md:px-7">
+            <div class="bg-[#E5E5E3] flex justify-center items-center mb-4 h-[210px] w-full">
               <img
                 decoding="async"
                 src="https://media-www.sqspcdn.com/images/pages/tour/email-campaigns/advanced-tools/automation-300w.jpg"
-                width="672"
-                height="432"
+                class="w-full h-full object-contain"
                 loading="lazy"
                 alt="Example of Squarespace Inventory panel"
               />
@@ -74,23 +67,16 @@
             <p class="text-sm font-semibold mb-4 text-gray-200">
               Collect customer emails and build mailing lists.
             </p>
-            <a
-              href="#"
-              class="text-sm font-semibold underline text-gray-200"
-              >LEARN MORE</a
-            >
+            <a href="#" class="text-sm font-semibold underline text-gray-200">LEARN MORE</a>
           </div>
 
           <!-- In Person Card -->
-          <div class="card opacity-0 translate-y-8">
-            <div
-              class="bg-[#E5E5E5] justify-center flex items-center mb-4 px-7 h-[210px]"
-            >
+          <div class="card opacity-0 translate-y-8 px-0 md:px-7">
+            <div class="bg-[#E5E5E3] flex justify-center items-center mb-4 h-[210px] w-full">
               <img
                 decoding="async"
                 src="https://media-www.sqspcdn.com/images/pages/tour/overview-ecommerce/sell-in-person-ui-300w.jpg"
-                width="672"
-                height="432"
+                class="w-full h-full object-contain"
                 loading="lazy"
                 alt="Example of Squarespace Inventory panel"
               />
@@ -100,11 +86,7 @@
               Keep your inventory and customer data in sync, whether you sell
               online or in person.
             </p>
-            <a
-              href="#"
-              class="text-sm font-semibold underline text-gray-200"
-              >LEARN MORE</a
-            >
+            <a href="#" class="text-sm font-semibold underline text-gray-200">LEARN MORE</a>
           </div>
         </div>
       </div>
@@ -169,5 +151,4 @@
       cards.forEach((card) => observer.observe(card));
     </script>
   </body>
-
 </html>

@@ -8,10 +8,10 @@ This  demonstrates a simple steps for how to create website layout styled using 
 ## 🖼️ Screenshots
 
 ### 🖥️ Desktop View
-![Desktop Screenshot](portion_of_landing-page/screenshot-desk.png)
+![Desktop Screenshot](portion_of_landing-page/desk-view.png)
 
 ### 📱 Mobile View
-![Mobile Screenshot](portion_of_landing-page/screenshot-mob.png)
+![Mobile Screenshot](portion_of_landing-page/mob-view.png)
 
 ---
 

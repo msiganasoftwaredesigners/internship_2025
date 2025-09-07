@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="text-white">
+
+    <!-- Section Start -->
+    <section class="py-10 bg-[#55575a]">
+      <div class="p-5 max-w-4xl mx-auto md:text-center">
+        <!-- Heading -->
+        <div>
+          <h2 class="heading opacity-0 translate-y-8 text-3xl font-bold mb-4 md:text-4xl leading-none">
+            Everything your <br />business needs<br />
+            to sell online
+          </h2>
+          <!-- Subtext -->
+          <p class="subtext opacity-0 translate-y-8 text-md font-bold font-sans leading-none tracking-tight text-gray-200 max-w-2xl mx-auto mb-16">
+            Whether you’re selling products, your expertise, or your time, <br />
+            your website is designed for simple customer check-out or <br />
+            appointment booking.
+          </p>
+        </div>
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7 text-left">
+          <!-- Product Card -->
+          <div class="card opacity-0 translate-y-8">
+            <div class="bg-[#E5E5E3] flex  mb-4 p-none sm:px-7 sm:h-[220px]">
+              <img
+                decoding="async"
+                src="https://media-www.sqspcdn.com/images/pages/tour/store-management/order-management/order-details-500w.jpg"
+                class="w-full h-full object-contain"
+                loading="lazy"
+                alt="Commerce orders UI on Squarespace app"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-gray-200">Sell Products</h3>
+            <p class="text-sm font-semibold text-gray-200 mb-4">
+              Allow visitors to browse your merchandise, add items to their cart,
+              and check out simply and efficiently.
+            </p>
+            <a href="#" class="text-sm font-semibold underline text-gray-200">LEARN MORE</a>
+          </div>
+
+          <!-- Services Card -->
+          <div class="card opacity-0 translate-y-8">
+            <div class="bg-[#E5E5E3] flex  mb-4 p-none sm:px-7 sm:h-[220px]">
+              <img
+                decoding="async"
+                src="https://media-www.sqspcdn.com/images/pages/tour/email-campaigns/advanced-tools/automation-300w.jpg"
+                class="w-full h-full object-contain"
+                loading="lazy"
+                alt="Example of Squarespace Inventory panel"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-gray-200">Sell Services</h3>
+            <p class="text-sm font-semibold mb-4 text-gray-200">
+              Collect customer emails and build mailing lists.
+            </p>
+            <a href="#" class="text-sm font-semibold underline text-gray-200">LEARN MORE</a>
+          </div>
+
+          <!-- In Person Card -->
+          <div class="card opacity-0 translate-y-8">
+            <div class="bg-[#E5E5E3] flex  mb-4 p-none sm:px-7 sm:h-[220px]">
+              <img
+                decoding="async"
+                src="https://media-www.sqspcdn.com/images/pages/tour/overview-ecommerce/sell-in-person-ui-300w.jpg"
+                class="w-full h-full object-contain"
+                loading="lazy"
+                alt="Example of Squarespace Inventory panel"
+              />
+            </div>
+            <h3 class="text-lg font-bold text-gray-200">Sell in person</h3>
+            <p class="text-sm font-semibold mb-4 text-gray-200">
+              Keep your inventory and customer data in sync, whether you sell
+              online or in person.
+            </p>
+            <a href="#" class="text-sm font-semibold underline text-gray-200">LEARN MORE</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section End -->
+
+    <script>
+      const heading = document.querySelector(".heading");
+      const subtext = document.querySelector(".subtext");
+      const cards = document.querySelectorAll(".card");
+
+      const options = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target === heading) {
+              entry.target.classList.remove("opacity-0", "translate-y-8");
+              entry.target.classList.add(
+                "opacity-100",
+                "translate-y-0",
+                "transition-all",
+                "duration-[1000ms]",
+                "ease-out"
+              );
+            }
+            if (entry.target === subtext) {
+              setTimeout(() => {
+                entry.target.classList.remove("opacity-0", "translate-y-8");
+                entry.target.classList.add(
+                  "opacity-100",
+                  "translate-y-0",
+                  "transition-all",
+                  "duration-[1000ms]",
+                  "ease-out"
+                );
+              }, 300);
+            }
+            if (entry.target.classList.contains("card")) {
+              const index = Array.from(cards).indexOf(entry.target);
+              setTimeout(() => {
+                entry.target.classList.remove("opacity-0", "translate-y-8");
+                entry.target.classList.add(
+                  "opacity-100",
+                  "translate-y-0",
+                  "transition-all",
+                  "duration-[1000ms]",
+                  "ease-out"
+                );
+              }, 600 + index * 400);
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, options);
+
+      // Observe all
+      observer.observe(heading);
+      observer.observe(subtext);
+      cards.forEach((card) => observer.observe(card));
+    </script>
+  </body>
+</html>

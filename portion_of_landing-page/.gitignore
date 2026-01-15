@@ -1,0 +1,12 @@
+# Node modules (always ignore)
+node_modules/
+
+# Tailwind source files (optional)
+src/
+postcss.config.js
+tailwind.config.js
+
+# Build tools configs
+package.json
+package-lock.json
+
